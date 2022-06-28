@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="/resources/img/favicon.png" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HarperDB Dog Images</title>
+  <link href="/resources/css/style.css" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <div id="app-content">
+      <img width="64" height="64" src="/resources/img/logo.png" /><br /><br />
+      <ul>
+        <% for (let dog of dogs) { %>
+          <li class="dog-listing">
+            <a href="dog/<%= dog.id %>"><%= dog.dog_name %>, <%= dog.age %> years old</a>
+            <% if (dog.imageType) { %>
+              <img class="dog-thumbnail" src="dog/<%= dog.id %>/image"/>
+            <% } %>
+          </li>
+        <% } %>
+      </ul>
+    </div>
+    <div id="app-bg-color" />
+    <div id="app-bg-dots" />
+  </div>
+</body>
+</html>

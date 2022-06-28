@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="/resources/img/favicon.png" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HarperDB Dog Images</title>
+  <link href="/resources/css/style.css" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <div id="app-content">
+      <a href="/test/dogs"><img width="64" height="64" src="/resources/img/logo.png" /></a><br /><br />
+      <form method="post" enctype="multipart/form-data">
+        <div class="dog-property">Name: <%= dog.dog_name %></div>
+        <% if (dog.imageType) { %>
+          <img class="dog-image" src="<%= dog.id %>/image"/>
+        <% } %>
+        <div class="dog-property"><label>Weight: </label><input type="number" name="weight" value="<%= dog.weight_lbs %>">lbs</div>
+        <div class="dog-property">
+          <label>Image:</label>
+          <input type="file" id="dog-image" name="image" />
+        </div>
+        <button>Update dog profile</button>
+      </form>
+    </div>
+    <div id="app-bg-color" />
+    <div id="app-bg-dots" />
+  </div>
+</body>
+</html>
